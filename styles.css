@@ -168,7 +168,21 @@ body {
 
 @media (max-width: 488px) {
     header   {
-        display: none;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        h2 {
+            font-size: 10px;
+            display: none;
+        }
+
+        .web-title {
+            img {
+                width: 200px;
+                height: 40px;
+            }
+        }
     }
 
     .body {
