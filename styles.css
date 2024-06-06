@@ -1,0 +1,206 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    gap: 100px;
+    margin-top: 10px;
+    color: white;
+
+    img {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+body {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url(bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.container {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 100px 50px;
+    padding: 100px 50px;
+}
+
+.container .custom-card {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 350px;
+    max-width: 100%;
+    height: 300px;
+    background: #fff;
+    border-radius: 20px;
+    transition: 0.5s;
+    box-shadow: 0 35px 88px rgba(0, 0, 0, 0.15);
+}
+
+.container .custom-card:hover {
+    height: 400px;
+    width: 500px;
+}
+
+.container .custom-card .img-box {
+    position: absolute;
+    top: 20px;
+    width: 300px;
+    height: 228px;
+    background: #333;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: 0.5s;
+}
+
+.container .custom-card:hover .img-box {
+    top: -100px;
+    scale: 0.75;
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.2);
+}
+
+.container .custom-card .img-box img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.container .custom-card .custom-content {
+    position: absolute;
+    top: 252px;
+    width: 100%;
+    height: 35px;
+    padding: 0 30px;
+    text-align: center;
+    overflow: hidden;
+    transition: 0.5s;
+}
+
+.container .custom-card:hover .custom-content {
+    top: 130px;
+    height: 250px;
+    overflow-y: auto; /* Menambahkan overflow-y untuk scroll */
+}
+
+.container .custom-card .custom-content h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #333333;
+}
+
+.container .custom-card .custom-content p .clip {
+    display: none;
+    color: #333;
+}
+
+.container .custom-card .custom-content a {
+    display: none;
+}
+
+.container .custom-card:hover p {
+    overflow: hidden;
+    transition: 0.5s;
+    display: block;
+}
+
+.container .custom-card:hover a {
+    overflow: hidden;
+    transform: 0.5s;
+    display: block;
+}
+
+.container .custom-card .custom-content a {
+    position: relative;
+    top: 15px;
+    display: inline-block;
+    padding: 12px 25px;
+    text-decoration: none;
+    background: #181818;
+    color: #fff;
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+}
+
+.container .custom-card .custom-content a:hover {
+    background: blue;
+    opacity: 0.8; /* Menggabungkan dua aturan hover */
+}
+
+.container .custom-card .custom-content a:active {
+    opacity: 0.5;
+}
+
+.clip {
+    width: 300px;
+    height: 300px;
+}
+
+@media (max-width: 488px) {
+    header   {
+        display: none;
+    }
+
+    .body {
+        display: grid;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .clip {
+        height: 200px;
+        width: 200px;
+    }
+
+    .container {
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        justify-content: center;
+    }
+
+    .container .custom-card {
+        width: 230px;
+        border-radius: 15px;
+    }
+
+    .container .custom-card:hover {
+        width: 300px;
+    }
+
+    .container .custom-card .img-box {
+        width: 185px;
+        border-radius: 10px;
+    }
+
+    .container .custom-card .custom-content p {
+        font-size: 0.8rem;
+    }
+
+    .container .custom-card .custom-content a {
+        font-size: 0.9rem;
+    }
+}
